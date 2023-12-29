@@ -11,21 +11,19 @@ import csv
 
 # Package Class
 #
-#
 
 class Package:
-    def __init__(self, ID, address, city, state, zipcode, Deadline_time, weight, status):
-        self.ID = ID
+    def __init__(self, package_id, address, city, state, zipcode, deadline, weight, delivery_status):
+        self.package_id = package_id
         self.address = address
         self.city = city
         self.state = state
         self.zipcode = zipcode
-        self.Deadline_time = Deadline_time
+        self.deadline = deadline
         self.weight = weight
-        self.status = status
-        self.departure_time = None
+        self.delivery_status = delivery_status
+        self.leaving_time = None
         self.delivery_time = None
-        self.nearest = None
 
     def __str__(self):
         return f"Package - Address: {self.address}, Deadline: {self.deadline}, City: {self.city}, Zipcode: {self.zipcode}, Weight: {self.weight} kg, Status: {self.status}, Time: {self.time}"
