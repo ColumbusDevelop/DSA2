@@ -25,6 +25,20 @@ class Package:
         self.leaving_time = None
         self.delivery_time = None
 
+class Package:
+    def __init__(self, ID, address, city, state, zipcode, Deadline_time, weight, status):
+        self.ID = ID
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zipcode = zipcode
+        self.Deadline_time = Deadline_time
+        self.weight = weight
+        self.status = status
+        self.departure_time = None
+        self.delivery_time = None
+
+
     def __str__(self):
         return f"Package - Address: {self.address}, Deadline: {self.deadline}, City: {self.city}, Zipcode: {self.zipcode}, Weight: {self.weight} kg, Status: {self.status}, Time: {self.time}"
 
@@ -40,14 +54,26 @@ class Package:
 #
 
 class Truck:
-    def ___init__(self, truck_id, packages, package_limit = 16, miles_driven, address, leave_time):
-        self.truck_id = truck_id
+    def ___init__(self, capacity, speed, load, packages, mileage, address, leave_time):
+        self.capacity = capacity
+        self.speed = speed
+        self.load = load
         self.packages = packages
-        self.package_limit = package_limit
-        self.miles_driven = miles_driven
+        self.mileage = mileage
         self.address = address
         self.leave_time = leave_time
         self.time = leave_time
+
+class Truck:
+    def __init__(self, capacity, speed, load, packages, mileage, address, depart_time):
+        self.capacity = capacity
+        self.speed = speed
+        self.load = load
+        self.packages = packages
+        self.mileage = mileage
+        self.address = address
+        self.depart_time = depart_time
+        self.time = depart_time
 
     def __str__(self):
         return f"Truck ID: {self.truck_id}, Packages: {self.packages}, Miles Driven: {self.miles_driven}, Address: {self.address}, Departure Time: {self.depart_time}"
