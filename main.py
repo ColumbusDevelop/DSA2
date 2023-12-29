@@ -17,6 +17,10 @@ class Package:
 
 # Truck Class
 
+
+
+# Hash Table
+
 class HashMap:
     pass
 
@@ -25,10 +29,6 @@ class HashMap:
 
     def search(self, id):
         pass
-
-# Hash Table
-
-
 
 # User Interface
 
