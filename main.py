@@ -1,6 +1,4 @@
 
-import csv
-
 # Package Class
 
 class Package:
@@ -17,15 +15,24 @@ class Package:
     def __str__(self):
         return f"Package - Address: {self.address}, Deadline: {self.deadline}, City: {self.city}, Zipcode: {self.zipcode}, Weight: {self.weight} kg, Status: {self.status}, Time: {self.time}"
 
+    def search(self, id):
+        pass
+
 # Truck Class
 
-class Truck:
+class HashMap:
     pass
+
+    def insert(self, id):
+        pass
 
 # Hash Table
 
 
 
 # User Interface
+
+if __name__ == "__main__":
+    pass
 
 
