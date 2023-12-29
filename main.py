@@ -13,7 +13,7 @@ import csv
 #
 
 class Package:
-    def __init__(self, package_id, address, deadline, city, zipcode, weight, delivery_status, delivery_time):
+    def __init__(self, package_id, address, deadline, city, zipcode, weight, delivery_status, leaving_time = None, delivery_time = None):
         self.package_id = package_id
         self.address = address
         self.deadline = deadline
@@ -21,39 +21,41 @@ class Package:
         self.zipcode = zipcode
         self.weight = weight
         self.delivery_status = delivery_status
+        self.leaving_time = leaving_time
         self.delivery_time = delivery_time
 
     def __str__(self):
         return f"Package - Address: {self.address}, Deadline: {self.deadline}, City: {self.city}, Zipcode: {self.zipcode}, Weight: {self.weight} kg, Status: {self.status}, Time: {self.time}"
 
+    def update_status(self, convert_timedelta):
+        if self.delivery_time < convert_timedelta:
+            self.delivery_status = "Delivered"
+        elif self.leaving_time > convert_timedelta:
+            self.delivery_status = "En route"
+        else:
+            self.delivery_status = "At Hub"
+
 # Truck Class
 #
 
 class Truck:
-    def ___init__(self, truck_id, packages, package_limit = 16, miles_driven, location):
+    def ___init__(self, truck_id, packages, package_limit = 16, miles_driven, address, leave_time):
         self.truck_id = truck_id
-        self.packages = []
+        self.packages = packages
         self.package_limit = package_limit
         self.miles_driven = miles_driven
-        self.location = location
+        self.address = address
+        self.leave_time = leave_time
+        self.time = leave_time
 
     def __str__(self):
-        return f"Truck ID: {self.truck_id}, Packages: {self.packages}, Package Limit: {self.package_limit}, Miles Driven: {self.miles_driven}, Location: {self.location}"
+        return f"Truck ID: {self.truck_id}, Packages: {self.packages}, Miles Driven: {self.miles_driven}, Address: {self.address}, Departure Time: {self.depart_time}"
 
-    def add(self, package):
-        pass
+##################    def add(self, package):
+##################        pass
 
-    def remove(self, package):
-        pass
-
-### Manually loading trucks 1, 2 and 3
-#
-
-truck1 = Truck()
-
-truck2 = Truck()
-
-truck3 = Truck()
+##################    def remove(self, package):
+##################        pass
 
 # CSV Reading
 #
@@ -75,6 +77,20 @@ with open("csv/distance.csv") as distanceFile:
 with open("csv/address.csv") as addressFile:
     addressReader = csv.reader(addressFile)
     addressReader = list(addressReader)
+
+###### Parsing Package Data
+
+
+
+### Manually loading trucks 1, 2 and 3
+#
+
+truck1 = Truck()
+
+truck2 = Truck()
+
+truck3 = Truck()
+
 
 # Hash Table
 #
