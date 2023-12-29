@@ -1,4 +1,6 @@
 
+import csv
+
 ### 3 trucks
 ### 2 drivers
 ### Drivers leave the hub no earlier than 8:00 a.m
@@ -35,7 +37,7 @@ class Truck:
         self.miles_driven = miles_driven
         self.location = location
 
-def __str__(self):
+    def __str__(self):
         return f"Truck ID: {self.truck_id}, Packages: {self.packages}, Package Limit: {self.package_limit}, Miles Driven: {self.miles_driven}, Location: {self.location}"
 
     def add(self, package):
@@ -44,10 +46,35 @@ def __str__(self):
     def remove(self, package):
         pass
 
+### Manually loading trucks
+#
+
+truck1 =
+
+truck2 =
+
+truck3 = 
+
 # CSV Reading
 #
 
+### Read Package CSV
 
+with open("csv/package.csv") as packageFile:
+    packageReader = csv.reader(packageFile)
+    packageReader = list(packageReader)
+
+### Read Distance CSV
+
+with open("csv/distance.csv") as distanceFile:
+    distanceReader = csv.reader(distanceFile)
+    distanceReader = list(distanceReader)
+
+### Read Address CSV
+
+with open("csv/address.csv") as addressFile:
+    addressReader = csv.reader(addressFile)
+    addressReader = list(addressReader)
 
 # Hash Table
 #
@@ -78,5 +105,5 @@ def nearest():
 
 if __name__ == "__main__":
     # Mohmoud Mohamed - 002439508    
-    pass
+    print()
 
