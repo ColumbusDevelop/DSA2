@@ -13,16 +13,18 @@ import csv
 #
 
 class Package:
-    def __init__(self, package_id, address, deadline, city, zipcode, weight, delivery_status, leaving_time = None, delivery_time = None):
-        self.package_id = package_id
+    def __init__(self, ID, address, city, state, zipcode, Deadline_time, weight, status):
+        self.ID = ID
         self.address = address
-        self.deadline = deadline
         self.city = city
+        self.state = state
         self.zipcode = zipcode
+        self.Deadline_time = Deadline_time
         self.weight = weight
-        self.delivery_status = delivery_status
-        self.leaving_time = leaving_time
-        self.delivery_time = delivery_time
+        self.status = status
+        self.departure_time = None
+        self.delivery_time = None
+        self.nearest = None
 
     def __str__(self):
         return f"Package - Address: {self.address}, Deadline: {self.deadline}, City: {self.city}, Zipcode: {self.zipcode}, Weight: {self.weight} kg, Status: {self.status}, Time: {self.time}"
