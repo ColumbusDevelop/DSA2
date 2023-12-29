@@ -46,14 +46,14 @@ class Truck:
     def remove(self, package):
         pass
 
-### Manually loading trucks
+### Manually loading trucks 1, 2 and 3
 #
 
-truck1 =
+truck1 = Truck()
 
-truck2 =
+truck2 = Truck()
 
-truck3 = 
+truck3 = Truck()
 
 # CSV Reading
 #
@@ -104,6 +104,6 @@ def nearest():
 # 3. Provide screenshots to show the status of all packages loaded onto each truck at a time between 12:03 p.m. and 1:12 p.m.
 
 if __name__ == "__main__":
-    # Mohmoud Mohamed - 002439508    
+    # Mohmoud Mohamed - 002439508
     print()
 
